@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="NopCommerce">
 
-  <test name="Run on FIREFOX">
+  <test name="Run on CHROME">
     <classes>
-      <class name="com.nopcommerce.user.Level_01_Register_Login"/>
+      <class name="com.nopcommerce.user.Level_02_Base_Page_Part_I"/>
+      <class name="com.nopcommerce.user.Level_02_Base_Page_Part_II"/>
+      <class name="com.nopcommerce.user.Level_02_Base_Page_Part_III"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+   
+</suite> 
