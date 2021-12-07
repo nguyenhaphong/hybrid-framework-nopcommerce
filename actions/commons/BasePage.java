@@ -319,7 +319,7 @@ public class BasePage {
 	}
 	
 	public void waitForElementVisible(WebDriver driver, String xpath) {
-		new WebDriverWait(driver, longTimeout).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpath)));
+		new WebDriverWait(driver, longTimeout).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(xpath)));
 	}
 	
 	public void waitForElementClickable(WebDriver driver, String xpath) {
