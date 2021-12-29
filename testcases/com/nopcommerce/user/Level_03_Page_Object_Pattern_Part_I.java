@@ -10,11 +10,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import commons.BasePage;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_03_Page_Object_Pattern_Part_I extends BasePage {
+public class Level_03_Page_Object_Pattern_Part_I {
 	private WebDriver driver;
 	private String emailAddress;
 	private HomePageObject homePage; // khai báo
