@@ -2,3 +2,4 @@ eclipse.preferences.version=1
 encoding//actions/commons/BaseTest.java=UTF-8
 encoding//testcases/com/nopcommerce/user/Level_03_Page_Object_Pattern_Part_I.java=UTF-8
 encoding//testcases/com/nopcommerce/user/Level_04_Multiple_Browser.java=UTF-8
+encoding//testcases/com/nopcommerce/user/Level_05_Page_Factory.java=UTF-8
