@@ -10,14 +10,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.users.UserHomePageObject;
+import pageObjects.users.UserRegisterPageObject;
 
 public class Level_03_Page_Object_Pattern_Part_I {
 	private WebDriver driver;
 	private String emailAddress;
-	private HomePageObject homePage; // khai báo
-	private RegisterPageObject registerPage; // khai báo
+	private UserHomePageObject homePage; // khai báo
+	private UserRegisterPageObject registerPage; // khai báo
 	String projectPath = System.getProperty("user.dir");
 
 	@BeforeClass
@@ -30,7 +30,7 @@ public class Level_03_Page_Object_Pattern_Part_I {
 		// Mở url thì mở ra trang homepage
 		driver.get("https://demo.nopcommerce.com/");
 		//Khởi tạo page lên
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -39,7 +39,7 @@ public class Level_03_Page_Object_Pattern_Part_I {
 	@Test
 	public void TC_01_Register_Empty_Data() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		registerPage.clickToRegisterButton();
 
@@ -54,7 +54,7 @@ public class Level_03_Page_Object_Pattern_Part_I {
 	@Test
 	public void TC_02_Register_Invalid_Email() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -71,7 +71,7 @@ public class Level_03_Page_Object_Pattern_Part_I {
 	@Test
 	public void TC_03_Register_Success() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -82,13 +82,13 @@ public class Level_03_Page_Object_Pattern_Part_I {
 		Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
 
 		registerPage.clickToLogoutLink(); // Từ trang Register chuyển về trang Home Page
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
 	public void TC_04_Register_Existing_Email() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -103,7 +103,7 @@ public class Level_03_Page_Object_Pattern_Part_I {
 	@Test
 	public void TC_05_Register_Password_Less_Than_6_Chars() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -120,7 +120,7 @@ public class Level_03_Page_Object_Pattern_Part_I {
 	@Test
 	public void TC_06_Invalid_Confirm_Password() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");

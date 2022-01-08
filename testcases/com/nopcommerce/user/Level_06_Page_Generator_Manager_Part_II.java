@@ -10,18 +10,18 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.users.UserCustomerInfoPageObject;
+import pageObjects.users.UserHomePageObject;
+import pageObjects.users.UserLoginPageObject;
+import pageObjects.users.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_Part_II extends BaseTest {
 	private WebDriver driver;
-	private HomePageObject homePage; // khai báo
-	private RegisterPageObject registerPage; // khai báo
-	private LoginPageObject loginPage;
-	private CustomerInfoPageObject customerInfoPage;
+	private UserHomePageObject homePage; // khai báo
+	private UserRegisterPageObject registerPage; // khai báo
+	private UserLoginPageObject loginPage;
+	private UserCustomerInfoPageObject customerInfoPage;
 	private String firstName, lastName, emailAddress, password;
 	
 
@@ -30,7 +30,7 @@ public class Level_06_Page_Generator_Manager_Part_II extends BaseTest {
 	public void beforeClass(String browserName, String url) {
 		driver = getBrowserDriver(browserName, url);
 		//Khởi tạo page lên
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName ="John";
 		lastName = "Terry";

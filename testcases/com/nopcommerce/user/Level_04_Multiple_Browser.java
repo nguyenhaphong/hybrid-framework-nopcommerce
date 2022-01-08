@@ -10,14 +10,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.users.UserHomePageObject;
+import pageObjects.users.UserRegisterPageObject;
 
 public class Level_04_Multiple_Browser extends BaseTest {
 	private WebDriver driver;
 	private String emailAddress;
-	private HomePageObject homePage; // khai báo
-	private RegisterPageObject registerPage; // khai báo
+	private UserHomePageObject homePage; // khai báo
+	private UserRegisterPageObject registerPage; // khai báo
 	
 
 	@Parameters({"browser", "url"})
@@ -26,13 +26,13 @@ public class Level_04_Multiple_Browser extends BaseTest {
 		driver = getBrowserDriver(browserName, url);
 		emailAddress = "afc" + generateFakeNumber() + "@mail.vn";
 		//Khởi tạo page lên
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
 	public void TC_01_Register_Empty_Data() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		registerPage.clickToRegisterButton();
 
@@ -47,7 +47,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void TC_02_Register_Invalid_Email() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -64,7 +64,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void TC_03_Register_Success() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -75,13 +75,13 @@ public class Level_04_Multiple_Browser extends BaseTest {
 		Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
 
 		registerPage.clickToLogoutLink(); // Từ trang Register chuyển về trang Home Page
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
 	public void TC_04_Register_Existing_Email() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -96,7 +96,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void TC_05_Register_Password_Less_Than_6_Chars() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");
@@ -113,7 +113,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void TC_06_Invalid_Confirm_Password() {
 		homePage.clickToResgiterLink(); // Mở ra trang Register Page
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		registerPage.inputToFirstNameTextbox("Automation");
 		registerPage.inputToLastNameTextbox("FC");

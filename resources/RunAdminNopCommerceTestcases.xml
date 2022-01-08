@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="NopCommerce">
+
+  <parameter name = "url" value = "https://admin-demo.nopcommerce.com/" />
+
+  <test name="Run on FIREFOX">
+  <parameter name ="browser" value ="firefox" />
+    <classes>
+      <class name="com.nopcommerce.user.Level_08_Switch_Role_Admin"/>
+    </classes>
+  </test>
+   
+</suite> 
