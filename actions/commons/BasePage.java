@@ -463,6 +463,10 @@ public class BasePage {
 		}
 	}
 	
+	public void openPagesAtMyAccountByPageName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT, pageName);
+		clickToElement(driver, BasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT, pageName);
+	}
 	// Admin Page
 	public AdminLoginPageObject clickAdminLogoutLink(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.ADMIN_LOGOUT_LINK);
