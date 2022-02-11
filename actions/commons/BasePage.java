@@ -474,6 +474,6 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
 	
-	private long longTimeout = 30;
+	private long longTimeout = GlobalContants.LONG_TIMEOUT;
 
 }
