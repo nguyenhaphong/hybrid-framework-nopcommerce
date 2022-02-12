@@ -287,13 +287,17 @@ public class BasePage {
 	public void switchToDefaultContentPage(WebDriver driver) {
 		driver.switchTo().defaultContent();
 	}
-	
+	 
 	public void hoverMouseToElement(WebDriver driver, String locatorType) {
 		new Actions(driver).moveToElement(getWebElement(driver, locatorType)).perform();
 	}
 	
 	public void pressKeyboardToElement(WebDriver driver, String locatorType, Keys key) {
 		new Actions(driver).sendKeys(getWebElement(driver, locatorType), key).perform();
+	}
+	
+	public void pressKeyboardToElement(WebDriver driver, String locatorType, Keys key, String...dynamicValues ) {
+		new Actions(driver).sendKeys(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)), key).perform();
 	}
 	
 	public Object executeForBrowser(WebDriver driver, String javaScript) {

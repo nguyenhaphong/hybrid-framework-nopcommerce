@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//actions/commons/BaseTest.java=UTF-8
+encoding//actions/pageObjects/jQuery/HomePageObject.java=UTF-8
 encoding//testcases/com/jquery/datatable/Level_10_DataTable_DataGrid.java=UTF-8
 encoding//testcases/com/nopcommerce/user/Level_03_Page_Object_Pattern_Part_I.java=UTF-8
 encoding//testcases/com/nopcommerce/user/Level_04_Multiple_Browser.java=UTF-8
