@@ -60,6 +60,14 @@ public class HomePageObject extends BasePage {
 		return allRowValueAllPage;
 			
 	}
+
+	public void enterToTextboxByColumnNameAtRowNumber(String columnName, String rowNumber, String value) {
+		// Lấy ra column index dựa vào tên cột
+		int columnIndex = getElementsNumber(driver, HomePageUI.COLUMN_INDEX_BY_NAME, columnName) + 1;
+		// Send key vào dòng nào
+		waitForElementVisible(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnIndex));
+		sendkeyToElement(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, value, rowNumber, String.valueOf(columnIndex));
+	}
 	
 
 }

@@ -25,7 +25,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		homePage = PageGeneratorManager.getHomePage(driver);
 	}
 
-	@Test
+	
 	public void Table_01_Paging() {
 		homePage.openPagingByPageNumber("10");
 		homePage.sleepInSecond(1);
@@ -45,7 +45,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		
 	}
 	
-	@Test
+	
 	public void Table_02_Enter_To_Header() {
 		homePage.refreshCurrentPage(driver);
 		
@@ -62,7 +62,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		homePage.sleepInSecond(3);
 	}
 	
-	@Test
+	
 	public void Table_03_Enter_To_Header() {
 		// Đọc dữ liệu từ file country.txt ra lưu vào 1 list<String> = Expected value
 		
@@ -70,6 +70,17 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		actualAllCountryValues = homePage.getValueEachRowAtAllPage();
 		
 		Assert.assertEquals(actualAllCountryValues, expectedAllCountryValues);
+	}
+	
+	@Test
+	public void Table_04_Enter_To_Textbox_At_Any_Row() {
+		// Value để nhập
+		// Row number tại row nào (Nhập vào dòng 2/3/5)
+		// Column name tại coloumn nào (Tên cột)
+		homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "Michael 97");
+		homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "1", "Michael Jackson");
+		homePage.enterToTextboxByColumnNameAtRowNumber("Year", "1", "1997");
+		homePage.enterToTextboxByColumnNameAtRowNumber("Price", "1", "15$");
 	}
 	
 	@AfterClass
