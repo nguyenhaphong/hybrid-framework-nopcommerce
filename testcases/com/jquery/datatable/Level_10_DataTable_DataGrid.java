@@ -74,13 +74,46 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 	
 	@Test
 	public void Table_04_Enter_To_Textbox_At_Any_Row() {
+		homePage.clickToLoadButton();
+		homePage.sleepInSecond(5);
 		// Value để nhập
 		// Row number tại row nào (Nhập vào dòng 2/3/5)
 		// Column name tại coloumn nào (Tên cột)
-		homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "Michael 97");
-		homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "1", "Michael Jackson");
-		homePage.enterToTextboxByColumnNameAtRowNumber("Year", "1", "1997");
-		homePage.enterToTextboxByColumnNameAtRowNumber("Price", "1", "15$");
+		homePage.enterToTextboxByColumnNameAtRowNumber("Album", "2", "Michael 97");
+		homePage.sleepInSecond(2);
+		
+		homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "4", "Michael Jackson");
+		homePage.sleepInSecond(2);
+		
+		homePage.enterToTextboxByColumnNameAtRowNumber("Year", "3", "1997");
+		homePage.sleepInSecond(2);
+		
+		homePage.enterToTextboxByColumnNameAtRowNumber("Price", "2", "150");
+		homePage.sleepInSecond(2);
+		
+		homePage.selectDropdownByColumnNameAtRowNumber("Origin", "5", "Japan");
+		homePage.sleepInSecond(2);
+		
+		homePage.selectDropdownByColumnNameAtRowNumber("Origin", "1", "Hong Kong");
+		homePage.sleepInSecond(2);
+		
+		homePage.selectDropdownByColumnNameAtRowNumber("Origin", "1", "US");
+		homePage.sleepInSecond(2);
+		
+		homePage.checkToCheckboxByColumnNameAtRowNumber("With Poster?", "3");
+		homePage.checkToCheckboxByColumnNameAtRowNumber("With Poster?", "5");
+		
+		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "3");
+		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "5");
+		
+		homePage.clickToIconButtonByRowNumber("1", "Remove Current Row");
+		
+		homePage.clickToIconButtonByRowNumber("3", "Insert Row Above");
+		
+		homePage.clickToIconButtonByRowNumber("5", "Move Up");
+		
+		homePage.clickToIconButtonByRowNumber("5", "Remove Current Row");
+		
 	}
 	
 	@AfterClass

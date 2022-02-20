@@ -258,9 +258,23 @@ public class BasePage {
 		}
 	}
 	
+	public void checkToRadioOrCheckbox(WebDriver driver, String locatorType, String... dynamicValues) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
+		if (!element.isSelected()) {
+			element.click();
+		}
+	}
+	
 	public void uncheckToCheckbox(WebDriver driver, String locatorType) {
 		if(getWebElement(driver, locatorType).isSelected()) {
 			getWebElement(driver, locatorType).click();
+		}
+	}
+	
+	public void uncheckToRadioOrCheckbox(WebDriver driver, String locatorType, String... dynamicValues) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
+		if (element.isSelected()) {
+			element.click();
 		}
 	}
 	
