@@ -1,6 +1,6 @@
 package pageUIs;
 
-public class BasePageUI {
+public class BasePageNopCommerceUI {
 	public static final String ORDER_PAGE_LINK = "xpath=//div[contains(@class,'account-navigation')]//a[text()='Orders']";
 	public static final String ADDRESS_PAGE_LINK = "xpath=//div[contains(@class,'account-navigation')]//a[text()='Addresses']";
 	public static final String REWARD_POINT_PAGE_LINK = "xpath=//div[contains(@class,'account-navigation')]//a[text()='Reward points']";

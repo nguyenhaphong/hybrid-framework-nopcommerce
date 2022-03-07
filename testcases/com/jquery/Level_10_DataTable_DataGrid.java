@@ -1,4 +1,4 @@
-package com.jquery.datatable;
+package com.jquery;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.jQuery.HomePageObject;
-import pageObjects.jQuery.PageGeneratorManager;
+import pageObjects.jQuery.dataTable.HomePageObject;
+import pageObjects.jQuery.dataTable.PageGeneratorManager;
 
 public class Level_10_DataTable_DataGrid extends BaseTest {
 	HomePageObject homePage;
@@ -64,7 +64,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 	
 	
 	public void Table_03_Enter_To_Header() {
-		// Đọc dữ liệu từ file country.txt ra lưu vào 1 list<String> = Expected value
+		// �?�?c dữ liệu từ file country.txt ra lưu vào 1 list<String> = Expected value
 		
 		
 		actualAllCountryValues = homePage.getValueEachRowAtAllPage();
